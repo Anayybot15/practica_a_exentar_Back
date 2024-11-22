@@ -1,0 +1,30 @@
+{
+  "name": "ejemplo",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.ts --port 3000 --host 0.0.0.0",
+    "dev": "nodemon app.ts",
+    "migrate": "cd ./db && npx sequelize-cli db:migrate",
+    "create:migration": "cd ./db && npx sequelize-cli migration:generate --name",
+    "create:seed": "cd ./db && npx sequelize-cli seed:generate --name",
+    "migrate:undo": "cd ./db && npx sequelize-cli db:migrate:undo",
+    "seed:undo": "cd ./db && npx sequelize-cli db:seed:undo",
+    "seed:all": "cd ./db && npx sequelize-cli db:seed:all"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.4",
+    "nodemon": "^3.1.7",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
