@@ -2,9 +2,11 @@ require('dotenv').config();
 import express from 'express';
 import router from './routes'; // Ruta para las operaciones CRUD
 import sequelize from './db/config/connection'; 
-const app = express();
+import cors from 'cors'
 
-// Middlewares
+const app = express();
+app.use(cors());
+// Middlewares;
 app.use(express.json());
 
 // Probar conexión a la base de datos

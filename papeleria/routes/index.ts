@@ -4,6 +4,7 @@ import Product from '../db/models/products';
 
 const router = express.Router();
 
+
 // Obtener todos los productos
 router.get('/products', async (req, res) => {
   try {

@@ -1,34 +1,25 @@
+require('dotenv').config();
 import { DataTypes, Sequelize } from 'sequelize';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
   dialect: 'mysql',
   host: process.env.DB_HOST
 });
 
-const Product = sequelize.define('Product', {
+const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
   name: {
-    type: DataTypes.STRING,
-    allowNull: false
+    type: DataTypes.STRING
   },
-  description : {
-    type: DataTypes.STRING,
-    allowNull: false
+  last_name: {
+    type: DataTypes.STRING
   },
-  price: {
-    type: DataTypes.FLOAT,
-    allowNull: false
-  },
-  stock: {
-    type: DataTypes.INTEGER,
-    allowNull: false
+  age: {
+    type: DataTypes.INTEGER
   },
   createdAt: {
     type: DataTypes.DATE
@@ -36,8 +27,6 @@ const Product = sequelize.define('Product', {
   updatedAt: {
     type: DataTypes.DATE
   }
-}, {
-  tableName: 'productos' 
 });
 
-export default Product;
+export default User
